@@ -1,0 +1,31 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "SQSReadAndSTS",
+            "Effect": "Allow",
+            "Action": [
+                "sqs:ListQueues",
+                "sts:GetCallerIdentity"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "CloudWatchAlarmManagement",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:DescribeAlarms",
+                "cloudwatch:PutMetricAlarm",
+                "cloudwatch:DeleteAlarms",
+                "cloudwatch:TagResource"
+            ],
+            "Resource": "arn:aws:cloudwatch:*:*:alarm/SQS-HighMessageCount-*"
+        },
+        {
+            "Sid": "SNSPublishNotification",
+            "Effect": "Allow",
+            "Action": "sns:Publish",
+            "Resource": "arn:aws:sns:*:*:test-topic"
+        }
+    ]
+}
