@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Step 1 - Installing packages..."
+      - apt-get update
+      - echo "AWS CLI version:"
+      - aws --version
+
+  pre_build:
+    commands:
+      - echo "Step 2 - Getting ready..."
+      - echo "Current folder:"
+      - pwd
+      - echo "Validating AWS credentials..."
+      - aws sts get-caller-identity
+
+  build:
+    commands:
+      - echo "Step 3 - Running CloudWatch alarm management script..."
+      - chmod +x ./script.sh
+      - ./script.sh
+
+  post_build:
+    commands:
+      - echo "Step 4 - All done!"
+      - echo "Execution completed at $(date)"
