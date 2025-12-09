@@ -31,45 +31,45 @@ declare -a FAILED_OPERATIONS
 # Logging Functions
 # ============================================================================
 
-log_info() {
-    echo "[INFO] $(date '+%Y-%m-%d %H:%M:%S') - $*"
-}
+# log_info() {
+#     echo "[INFO] $(date '+%Y-%m-%d %H:%M:%S') - $*"
+# }
 
-log_error() {
-    echo "[ERROR] $(date '+%Y-%m-%d %H:%M:%S') - $*" >&2
-}
+# log_error() {
+#     echo "[ERROR] $(date '+%Y-%m-%d %H:%M:%S') - $*" >&2
+# }
 
-log_success() {
-    echo "[SUCCESS] $(date '+%Y-%m-%d %H:%M:%S') - $*"
-}
+# log_success() {
+#     echo "[SUCCESS] $(date '+%Y-%m-%d %H:%M:%S') - $*"
+# }
 
-log_warning() {
-    echo "[WARNING] $(date '+%Y-%m-%d %H:%M:%S') - $*"
-}
+# log_warning() {
+#     echo "[WARNING] $(date '+%Y-%m-%d %H:%M:%S') - $*"
+# }
 
 # ============================================================================
 # Logging Functions (UPDATED)
 # ============================================================================
 
-# log_info() {
-#     # Changed echo to 'echo ... >&2'
-#     echo "[INFO] $(date '+%Y-%m-%d %H:%M:%S') - $*" >&2
-# }
+log_info() {
+    # Changed echo to 'echo ... >&2'
+    echo "[INFO] $(date '+%Y-%m-%d %H:%M:%S') - $*" >&2
+}
 
-# log_error() {
-#     # This was already correct, but explicitly showing the change
-#     echo "[ERROR] $(date '+%Y-%m-%d %H:%M:%S') - $*" >&2
-# }
+log_error() {
+    # This was already correct, but explicitly showing the change
+    echo "[ERROR] $(date '+%Y-%m-%d %H:%M:%S') - $*" >&2
+}
 
-# log_success() {
-#     # Changed echo to 'echo ... >&2'
-#     echo "[SUCCESS] $(date '+%Y-%m-%d %H:%M:%S') - $*" >&2
-# }
+log_success() {
+    # Changed echo to 'echo ... >&2'
+    echo "[SUCCESS] $(date '+%Y-%m-%d %H:%M:%S') - $*" >&2
+}
 
-# log_warning() {
-#     # Changed echo to 'echo ... >&2'
-#     echo "[WARNING] $(date '+%Y-%m-%d %H:%M:%S') - $*" >&2
-# }
+log_warning() {
+    # Changed echo to 'echo ... >&2'
+    echo "[WARNING] $(date '+%Y-%m-%d %H:%M:%S') - $*" >&2
+}
 
 # ============================================================================
 # Helper Functions
