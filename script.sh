@@ -11,9 +11,9 @@ set -euo pipefail  # Exit on error, undefined variables, and pipe failures
 # ============================================================================
 
 # Configuration
-AWS_REGION="${AWS_REGION:-us-west-2}"
+AWS_REGION="${AWS_REGION:-us-east-1}"
 ALARM_THRESHOLD="${ALARM_THRESHOLD:-5}"
-SNS_TOPIC_ARN="${SNS_TOPIC_ARN:-arn:aws:sns:us-west-2:860265990835:test-topic}"
+SNS_TOPIC_ARN="${SNS_TOPIC_ARN:-arn:aws:sns:us-east-1:860265990835:test-topic}"
 ALARM_PERIOD="${ALARM_PERIOD:-60}"  # 1 minute
 
 # Counters for summary
@@ -52,7 +52,7 @@ log_warning() {
 # ============================================================================
 
 # Extract queue name from queue URL
-# Example: https://sqs.us-west-2.amazonaws.com/123456789/my-queue -> my-queue
+# Example: https://sqs.us-east-1.amazonaws.com/123456789/my-queue -> my-queue
 extract_queue_name() {
     local queue_url=$1
     echo "$queue_url" | awk -F'/' '{print $NF}'
