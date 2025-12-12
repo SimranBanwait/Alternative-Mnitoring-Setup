@@ -23,5 +23,9 @@ phases:
       - ./script-deploy.sh
 
   post_build:
+    artifacts:
+      files:
+        - plan.txt
+        - script-deploy.sh
     commands:
       - echo "Deployment complete!"
